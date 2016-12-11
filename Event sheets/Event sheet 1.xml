@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-group description="" sid="618054603473319" title="MovimentacaoKaua">
+            <sub-events>
+                <event-block sid="476944013756355">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="783841431305792" type="Indio" />
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="662864285697462" type="Indio" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="348153321235406" type="Indio">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="928174330828669">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="889853369742992" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="654081226503030" type="Indio">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="586364095657900">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="352586059623758" type="Indio" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="836457093545732" type="Indio">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="419680050961098">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="326191925836753" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="842963039404630" type="Indio">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="969409219457579">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="304664264887300" type="Indio" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="876508346572142" type="Indio">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="672018749109251">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="400549548259926" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="568682105497298" type="Indio" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="914074377252431" type="System">
+                            <param id="0" name="Object to create">Tiro</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">Indio.X  - 20</param>
+                            <param id="3" name="Y">Indio.Y - 30</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="747062348632384" type="Tiro">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="691585166317837" type="Tiro">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="880654992606325">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="682453462569238" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="777204681563903" type="Indio" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="343410472709378" type="System">
+                            <param id="0" name="Object to create">Tiro</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">Indio.X  + 10</param>
+                            <param id="3" name="Y">Indio.Y - 30</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="620965146743288" type="Tiro">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="556512152862185" title="Inimigo">
+            <sub-events>
+                <event-block sid="616409698447105">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="601656192638841" type="System">
+                            <param id="0" name="Interval (seconds)">1.5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="728442969525620" type="Cacador">
+                            <param id="0" name="Object">TiroInimigo</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="672017868876879" type="TiroInimigo">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="872122688589310" type="TiroInimigo">
+                            <param id="0" name="X">Indio.X</param>
+                            <param id="1" name="Y">indio.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="359312762560800">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="733437986187964" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="504099491976406">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="386155926263425" type="Indio">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">Cacador.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="642188549681514" type="Cacador">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="591357235958154">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="375521614090902" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="497956543262432">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="637722449129683" type="Indio">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">Cacador.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="563860982928967" type="Cacador">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="606314602087814" title="Colisoes">
+            <sub-events>
+                <event-block sid="583705525289795">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="561787611882267" type="Tiro">
+                            <param id="0" name="Object">Cacador</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="253109602310330" type="Cacador">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="237770273346775" type="Tiro" />
+                    </actions>
+                </event-block>
+                <event-block sid="229354399399232">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="820809159392939" type="Tiro">
+                            <param id="0" name="Object">TiroInimigo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="999187534118377" type="TiroInimigo">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="675450655813195" type="Tiro" />
+                    </actions>
+                </event-block>
+                <event-block sid="238950163760786">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="264273438535090" type="TiroInimigo">
+                            <param id="0" name="Object">Indio</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="666128450959337" type="Indio">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="120109767765686" type="TiroInimigo" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="747883938868866" title="ContadorVidas">
+            <sub-events>
+                <event-block sid="996902094356670">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="287829239904753" type="Cacador">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="846304314228050" type="Cacador" />
+                    </actions>
+                </event-block>
+                <event-block sid="737284421506557">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="832557002485997" type="TiroInimigo">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="722136757065387" type="TiroInimigo" />
+                    </actions>
+                </event-block>
+                <event-block sid="836769426556377">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="235512665932057" type="Indio">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="472385234088714" type="Indio" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
