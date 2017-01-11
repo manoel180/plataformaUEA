@@ -67,6 +67,30 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block disabled="1" sid="742035351409806">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="238252391627253" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="290544411558320" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="105996645406907" type="System">
+                            <param id="0" name="Object to create">Tiro</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">Indio.X  - 20</param>
+                            <param id="3" name="Y">Indio.Y - 30</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="411036518058081" type="Tiro">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="629733734459697" type="Tiro">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="672018749109251">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="400549548259926" type="Keyboard">
